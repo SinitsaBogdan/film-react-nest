@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { FilmsRepository } from 'src/films/repository/films.repository';
 import { OrdersRepository } from 'src/order/repository/orders.repository';
-import { CreateOrderDto, ReturnOrdersDto } from './dto';
+import { CreateOrderDto, CreateTicketDto } from './dto';
 import { ReturnError } from 'src/util/returnError';
+import { ReturnItems } from 'src/films/util/returnItems';
 
 @Injectable()
 export class OrderService {
@@ -13,7 +14,7 @@ export class OrderService {
 
   async createOrder(
     createOrderDto: Omit<CreateOrderDto, 'id'>,
-  ): Promise<ReturnOrdersDto | ReturnError> {
+  ): Promise<ReturnItems<CreateTicketDto> | ReturnError> {
     try {
       const films = [];
       for (const film of createOrderDto.tickets) {
