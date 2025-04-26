@@ -39,22 +39,11 @@ export class OrderService {
       }
       const result = await this.ordersRepository.createOrder(createOrderDto);
 
-      for (const ticket of createOrderDto.tickets) {
-        const taken = `${ticket.row}:${ticket.seat}`;
-        const filmItem = films.find((item) => item.id === ticket.film);
-        filmItem.schedule.forEach((element) => {
-          if (
-            element.id === ticket.session &&
-            element.daytime === ticket.daytime
-          ) {
-            element.taken.push(taken);
-          }
-        });
-        await this.filmsRepository.updateFilmScheduleById(
-          ticket.film,
-          filmItem.schedule,
-        );
-      }
+      await this.filmsRepository.updateFilmSchedules(
+        createOrderDto.tickets,
+        films,
+      );
+
       return {
         total: result.tickets.length,
         items: result.tickets,
