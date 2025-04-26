@@ -21,5 +21,5 @@ export class Schedule {
   price: number;
 
   @Prop()
-  taken: [];
+  taken: string[];
 }
