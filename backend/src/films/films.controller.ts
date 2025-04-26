@@ -10,7 +10,7 @@ import { ReturnError } from 'src/util/returnError';
 export class FilmsController {
   constructor(private readonly filmsService: FilmsService) {}
 
-  @Get('/')
+  @Get()
   async findFilmsAll(): Promise<ReturnItems<GetFilmDto>> {
     return this.filmsService.findAll();
   }
