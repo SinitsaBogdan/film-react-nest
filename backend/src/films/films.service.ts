@@ -20,8 +20,9 @@ export class FilmsService {
     try {
       const result = await this.filmsRepository.findFilmById(id);
       if (!result) {
-        throw new Error('По заданному id данные не найдены');
+        throw new Error('По указанному id фильма сеансы не найдены');
       }
+
       return { total: result.schedule.length, items: result.schedule };
     } catch (e) {
       return { error: e.message };
