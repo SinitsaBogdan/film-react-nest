@@ -2,8 +2,8 @@ import { Injectable, Optional } from '@nestjs/common';
 import { PostgresRepository } from './postgresql.repository';
 import { MongodbRepository } from './mongodb.repository';
 import { ConfigService } from '@nestjs/config';
-import { GetFilmDto } from 'src/films/dto/get-film.dto';
-import { CreateTicketDto } from 'src/order/dto';
+import { GetFilmDto } from '../films/dto/get-film.dto';
+import { CreateTicketDto } from '../order/dto';
 
 @Injectable()
 export class DatabaseRepository {
