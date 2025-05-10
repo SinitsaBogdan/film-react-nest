@@ -15,6 +15,7 @@ module.exports = {
   // Настройка деплоя
   deploy: {
     production: {
+      key: "/home/sinitsa/.ssh",
       user: DEPLOY_USER,
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
