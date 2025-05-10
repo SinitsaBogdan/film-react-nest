@@ -3,7 +3,7 @@ services:
     image: sinitsabogdan/film-nest-app-frontend:node20-alpine
     container_name: frontend
     networks:
-      - webnet
+      - frontend_net
     volumes:
       - frontend_dist:/app/dist
 
@@ -11,7 +11,7 @@ services:
     image: sinitsabogdan/film-nest-app-backend:node20-alpine
     container_name: backend
     networks:
-      - webnet
+      - backend_net
     restart: unless-stopped
     environment:
       - DATABASE_DRIVER=postgres
@@ -32,7 +32,7 @@ services:
       - ./initDB/:/docker-entrypoint-initdb.d
       - postgres_data:/usr/local/pgsql/data
     networks:
-      - webnet
+      - backend_net
     restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: postgres
@@ -43,7 +43,7 @@ services:
     ports:
       - 8080:80
     networks:
-      - webnet
+      - backend_net
     restart: unless-stopped
     environment:
       - PGADMIN_DEFAULT_EMAIL=sinitsa.bogdan.1997@yandex.ru
@@ -55,7 +55,8 @@ services:
       - 80:80
       - 443:443
     networks:
-      - webnet
+      - frontend_net
+      - backend_net
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
@@ -66,7 +67,7 @@ services:
   certbot:
     image: certbot/certbot:latest
     networks:
-      - webnet
+      - frontend_net
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
@@ -76,4 +77,5 @@ volumes:
   frontend_dist:
 
 networks:
-  webnet:
+  frontend_net:
+  backend_net:
