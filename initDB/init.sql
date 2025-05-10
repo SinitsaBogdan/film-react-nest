@@ -1,6 +1,6 @@
-create user student with encrypted password 'root';
+create user admin with encrypted password 'root';
 
-create database practicum with owner 'student';
+create database practicum with owner 'admin';
 
 \c practicum;
 
@@ -22,7 +22,7 @@ create table public.films
 );
 
 alter table public.films
-    owner to student;
+    owner to admin;
 
 create table public.schedules
 (
@@ -41,7 +41,7 @@ create table public.schedules
 );
 
 alter table public.schedules
-    owner to student;
+    owner to admin;
 
 INSERT INTO films("id","rating","director","tags","image","cover","title","about","description") VALUES('92b8a2a7-ab6b-4fa9-915b-d27945865e39',8.1,'Амелия Хьюз','Рекомендуемые','/bg6s.jpg','/bg6c.jpg','Сон в летний день','Фэнтези-фильм о группе друзей попавших в волшебный лес, где время остановилось.','Причудливый фэнтези-фильм, действие которого происходит в волшебном лесу, где время остановилось. Группа друзей натыкается на это заколдованное царство и поначалу проникается беззаботным духом обитателей, но потом друзьям приходится разойтись. А как встретиться снова, если нет ни времени, ни места встречи?');
 INSERT INTO films("id","rating","director","tags","image","cover","title","about","description") VALUES('0354a762-8928-427f-81d7-1656f717f39c',9.5,'Оливер Беннет','Рекомендуемые','/bg4s.jpg','/bg4c.jpg','Парадокс Нексуса','Фильм об эксперименте по соединению человеческих умов. Исследует вопросы неприкосновенности частной жизни, идентичности и самой природы человеческого сознания','В фильме исследуются последствия новаторского эксперимента по соединению человеческих умов. По мере развития проекта участники сталкиваются с вопросами неприкосновенности частной жизни, идентичности и самой природы человеческого сознания.');
