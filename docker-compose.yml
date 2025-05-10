@@ -46,7 +46,7 @@ services:
       - webnet
     restart: unless-stopped
     environment:
-      - PGADMIN_DEFAULT_EMAIL=veseliy.koteika@yandex.ru
+      - PGADMIN_DEFAULT_EMAIL=sinitsa.bogdan.1997@yandex.ru
       - PGADMIN_DEFAULT_PASSWORD=postgres
 
   nginx:
