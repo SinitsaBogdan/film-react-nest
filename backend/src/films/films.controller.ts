@@ -3,8 +3,8 @@ import { FilmsService } from './films.service';
 import { ReturnItems } from './util/returnItems';
 import { GetFilmDto } from './dto/get-film.dto';
 import { Schedule } from './repository/schedule.schema';
-import { FindIdParams } from 'src/util/findIdParams';
-import { ReturnError } from 'src/util/returnError';
+import { FindIdParams } from '../util/findIdParams';
+import { ReturnError } from '../util/returnError';
 
 @Controller('films')
 export class FilmsController {
