@@ -20,7 +20,8 @@ services:
       - DATABASE_NAME=postgres
       - DATABASE_USERNAME=admin
       - DATABASE_PASSWORD=root
-      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/films
+      # - DATABASE_URL=postgresql://postgres:admin@172.20.0.2:5432/practicum
+      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/practicum
       - LOGGER=tskv
     depends_on:
       - postgres
