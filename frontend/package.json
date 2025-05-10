@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "deploy": "npm run build && scp -Cr ./dist/* sinitsa@84.201.168.34:/home/sinitsa/film-react-nest/frontend",
     "component": "sh ./bin/copy.sh Component src/components"
   },
   "dependencies": {
