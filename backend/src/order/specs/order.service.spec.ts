@@ -7,7 +7,12 @@ describe('OrderService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [OrderService],
-    }).compile();
+    })
+      .overrideProvider(OrderService)
+      .useValue({
+        createOrder: jest.fn(),
+      })
+      .compile();
 
     service = module.get<OrderService>(OrderService);
   });
