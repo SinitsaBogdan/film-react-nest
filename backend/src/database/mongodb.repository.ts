@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { GetFilmDto } from 'src/films/dto/get-film.dto';
-import { Film } from 'src/films/repository/films.schema';
-import { CreateTicketDto } from 'src/order/dto';
+import { GetFilmDto } from '../films/dto/get-film.dto';
+import { Film } from '../films/repository/films.schema';
+import { CreateTicketDto } from '../order/dto';
 
 @Injectable()
 export class MongodbRepository {
