@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { faker } from '@faker-js/faker';
-import { CreateOrderDto } from 'src/order/dto';
+import { CreateOrderDto } from '../dto/create-order.dto';
 
 @Injectable()
 export class OrdersRepository {
