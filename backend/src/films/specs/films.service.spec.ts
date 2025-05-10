@@ -7,7 +7,13 @@ describe('FilmsService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [FilmsService],
-    }).compile();
+    })
+      .overrideProvider(FilmsService)
+      .useValue({
+        findAll: jest.fn(),
+        findScheduleById: jest.fn(),
+      })
+      .compile();
 
     service = module.get<FilmsService>(FilmsService);
   });
