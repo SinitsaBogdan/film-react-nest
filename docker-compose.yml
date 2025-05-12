@@ -20,7 +20,6 @@ services:
       - DATABASE_NAME=practicum
       - DATABASE_USERNAME=admin
       - DATABASE_PASSWORD=root
-      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/practicum
       - LOGGER=tskv
     depends_on:
       - postgres
