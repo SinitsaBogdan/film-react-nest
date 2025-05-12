@@ -42,7 +42,7 @@ export class DatabaseModule {
               password: config.get<string>('database.password'),
               database: config.get<string>('database.name'),
               entities: [Films, Schedules],
-              synchronize: true,
+              synchronize: false,
             }),
             inject: [ConfigService],
           }),
