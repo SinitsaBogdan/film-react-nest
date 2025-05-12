@@ -62,7 +62,7 @@ services:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/letsencrypt/:ro
       - frontend_dist:/var/www/frontend:rw
-      - ./backend/public/content:/var/www/content:ro
+      - ./backend/public/*:/var/www/frontend/content:rw
 
   certbot:
     image: certbot/certbot:latest
