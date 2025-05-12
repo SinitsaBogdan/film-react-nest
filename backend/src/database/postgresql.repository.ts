@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { GetFilmDto } from 'src/films/dto/get-film.dto';
-import { Films } from 'src/films/entities/film.entity';
-import { Schedules } from 'src/films/entities/schedule.entity';
-import { CreateTicketDto } from 'src/order/dto';
+import { GetFilmDto } from '../films/dto/get-film.dto';
+import { Films } from '../films/entities/film.entity';
+import { Schedules } from '../films/entities/schedule.entity';
+import { CreateTicketDto } from '../order/dto';
 import { Repository } from 'typeorm';
 
 @Injectable()

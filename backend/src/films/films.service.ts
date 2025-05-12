@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { FilmsRepository } from './repository/films.repository';
-import { ReturnError } from 'src/util/returnError';
+import { ReturnError } from '../util/returnError';
 import { ReturnItems } from './util/returnItems';
 import { GetFilmDto } from './dto/get-film.dto';
 import { Schedule } from './repository/schedule.schema';

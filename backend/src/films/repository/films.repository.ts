@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { DatabaseRepository } from 'src/database/database.repository';
-import { GetFilmDto } from 'src/films/dto/get-film.dto';
-import { CreateTicketDto } from 'src/order/dto';
+import { DatabaseRepository } from '../../database/database.repository';
+import { GetFilmDto } from '../dto/get-film.dto';
+import { CreateTicketDto } from '../../order/dto/create-ticket.dto';
 
 @Injectable()
 export class FilmsRepository {

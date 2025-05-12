@@ -1,9 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto';
-import { ReturnError } from 'src/util/returnError';
+import { ReturnError } from '../util/returnError';
 import { CreateTicketDto } from './dto';
-import { ReturnItems } from 'src/films/util/returnItems';
+import { ReturnItems } from '../films/util/returnItems';
 
 @Controller('/order')
 export class OrderController {
